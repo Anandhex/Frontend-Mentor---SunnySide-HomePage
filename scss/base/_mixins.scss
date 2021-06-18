@@ -1,0 +1,15 @@
+@mixin mobile {
+  @media (max-width: 390px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 391px) {
+    @content;
+  }
+}
+
+@mixin btnAfterColor($color) {
+  background-color: $color;
+}
