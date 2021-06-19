@@ -17,6 +17,11 @@ h3 {
 }
 
 .split {
+  @include tab {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   @include desktop {
     height: 100vh;
     display: grid;
@@ -24,6 +29,11 @@ h3 {
   }
 }
 .reverse {
+  @include tab {
+    .written-section {
+      grid-row: 1;
+    }
+  }
   @include desktop {
     .written-section {
       grid-row: 1;
@@ -48,6 +58,8 @@ header {
     h2 {
       color: $white;
       font-weight: 900;
+      font-family: $font-barlow;
+      font-size: 2.2rem;
     }
     ul {
       display: flex;
@@ -71,6 +83,13 @@ header {
       line-height: 1.1;
       padding-bottom: 10rem;
     }
+
+    @include tab {
+      h1 {
+        padding-bottom: 5rem;
+      }
+    }
+
     @include desktop {
       h1 {
         padding-bottom: 5rem;
@@ -97,6 +116,7 @@ header {
 
 .egg {
   background-image: url("../images/mobile/image-transform.jpg");
+
   @include desktop {
     background-image: url("../images/desktop/image-transform.jpg");
   }
@@ -104,6 +124,7 @@ header {
 
 .glass {
   background-image: url("../images/mobile/image-stand-out.jpg");
+
   @include desktop {
     background-image: url("../images/desktop/image-stand-out.jpg");
   }
@@ -117,6 +138,10 @@ header {
   background-position: center;
   background-size: cover;
 
+  @include tab {
+    width: 100%;
+    height: auto;
+  }
   @include desktop {
     width: 100%;
     height: auto;
@@ -125,12 +150,14 @@ header {
 
 .graphic-design {
   background-image: url("../images/mobile/image-graphic-design.jpg");
+
   @include desktop {
     background-image: url("../images/desktop/image-graphic-design.jpg");
   }
 }
 .photography {
   background-image: url("../images/mobile/image-photography.jpg");
+
   @include desktop {
     background-image: url("../images/desktop/image-photography.jpg");
   }
@@ -150,13 +177,19 @@ header {
   padding: 0 1.5rem;
   text-align: center;
   h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     padding-bottom: 1rem;
   }
   p {
     font-weight: bold;
     padding-bottom: 3rem;
     font-size: 1rem;
+  }
+  @include tab {
+    height: 80vh;
+    p {
+      width: 30ch;
+    }
   }
   @include desktop {
     height: 100vh;
@@ -178,7 +211,7 @@ header {
   align-items: center;
   font-size: 1.125rem;
   h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     line-height: 1.1;
     padding-bottom: 1.5rem;
   }
@@ -211,6 +244,9 @@ header {
       opacity: 1;
     }
   }
+  @include tab {
+    width: 100%;
+  }
   @include desktop {
     width: 100%;
   }
@@ -233,6 +269,7 @@ button.pink::after {
     color: $grayish-blue;
     letter-spacing: 3px;
     padding-bottom: 2rem;
+
     @include desktop {
       padding-bottom: 4rem;
     }
@@ -263,13 +300,15 @@ button.pink::after {
 .image-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+
   img {
     width: 50vw;
   }
+
   @include desktop {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    overflow: hidden;
     img {
       width: 25vw;
       height: 50vh;
@@ -311,6 +350,11 @@ footer {
 }
 
 .testimonials > div {
+  @include tab {
+    article {
+      width: 45ch;
+    }
+  }
   @include desktop {
     display: flex;
     article {
@@ -380,4 +424,8 @@ footer {
 
 .mobile-links.active-nav {
   display: flex;
+}
+
+.split > * {
+  min-width: 0;
 }
