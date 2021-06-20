@@ -367,6 +367,7 @@ footer {
   @include mobile {
     display: none;
   }
+  color: white;
   display: flex;
   align-items: center;
   li + li {

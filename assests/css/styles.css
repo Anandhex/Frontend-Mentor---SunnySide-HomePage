@@ -446,6 +446,7 @@ footer ul:last-of-type {
 }
 
 .desktop-links {
+  color: white;
   display: flex;
   align-items: center;
 }
